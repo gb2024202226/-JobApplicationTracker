@@ -1,0 +1,37 @@
+[
+    {
+        "company": "coggnigent",
+        "role": "java developer",
+        "status": "Selected"
+    },
+    {
+        "company": "amazon",
+        "role": "data scientist",
+        "status": "Interview"
+    },
+    {
+        "company": "microsoft",
+        "role": "software developer",
+        "status": "Selected"
+    },
+    {
+        "company": "google",
+        "role": "data analyst",
+        "status": "Applied"
+    },
+    {
+        "company": "google",
+        "role": "data analyst",
+        "status": "Applied"
+    },
+    {
+        "company": "google",
+        "role": "data analyst",
+        "status": "Interview"
+    },
+    {
+        "company": "google",
+        "role": "data analyst",
+        "status": "Interview"
+    }
+]

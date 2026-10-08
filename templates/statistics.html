@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Statistics - Job Application Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-title">
+        💼 Job Application Tracker
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            🏠 Home
+        </a>
+
+        <a href="/applications">
+            📋 Applications
+        </a>
+
+        <a href="/statistics">
+            📊 Statistics
+        </a>
+
+        <a href="/eligibility">
+            🎓 Eligibility
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="section">
+
+        <h1>📊 Application Statistics</h1>
+
+        <p class="subtitle">
+            Track your job application progress and performance.
+        </p>
+
+    </div>
+
+
+    <div class="statistics">
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ total }}
+            </div>
+
+            <div class="stat-label">
+                📋 Total Applications
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ applied }}
+            </div>
+
+            <div class="stat-label">
+                📝 Applied
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ interview }}
+            </div>
+
+            <div class="stat-label">
+                🎤 Interview
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ selected }}
+            </div>
+
+            <div class="stat-label">
+                🎉 Selected
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ rejected }}
+            </div>
+
+            <div class="stat-label">
+                ❌ Rejected
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ selection_rate }}%
+            </div>
+
+            <div class="stat-label">
+                📈 Selection Rate
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>📌 Application Summary</h2>
+
+        <p>
+            You have submitted
+            <strong>{{ total }}</strong>
+            job application(s).
+        </p>
+
+        <p>
+            <strong>{{ interview }}</strong>
+            application(s) reached the interview stage.
+        </p>
+
+        <p>
+            <strong>{{ selected }}</strong>
+            application(s) resulted in selection.
+        </p>
+
+        <p>
+            Your current selection rate is
+            <strong>{{ selection_rate }}%</strong>.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

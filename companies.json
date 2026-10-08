@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Google",
+        "cgpa": 7.0
+    },
+    {
+        "name": "Microsoft",
+        "cgpa": 7.5
+    },
+    {
+        "name": "Amazon",
+        "cgpa": 7.0
+    },
+    {
+        "name": "TCS",
+        "cgpa": 6.0
+    },
+    {
+        "name": "Infosys",
+        "cgpa": 6.0
+    },
+    {
+        "name": "Accenture",
+        "cgpa": 6.5
+    },
+    {
+        "name": "Deloitte",
+        "cgpa": 7.0
+    },
+    {
+        "name": "IBM",
+        "cgpa": 7.2
+    }
+]

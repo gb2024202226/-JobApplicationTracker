@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Home - Job Application Tracker</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="nav-title">
+        💼 Job Application Tracker
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/">
+            🏠 Home
+        </a>
+
+        <a href="/applications">
+            📋 Applications
+        </a>
+
+        <a href="/statistics">
+            📊 Statistics
+        </a>
+
+        <a href="/eligibility">
+            🎓 Eligibility
+        </a>
+
+        <a href="/about">
+            ℹ️ About
+        </a>
+
+    </div>
+
+</nav>
+
+
+<div class="container">
+
+    <div class="section">
+
+        <h1>
+            Welcome to Job Application Tracker 👋
+        </h1>
+
+        <p class="subtitle">
+            Manage, track and organize all your job applications in one place.
+        </p>
+
+    </div>
+
+
+    <div class="statistics">
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ total }}
+            </div>
+
+            <div class="stat-label">
+                📋 Total Applications
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ applied }}
+            </div>
+
+            <div class="stat-label">
+                📝 Applied
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ interview }}
+            </div>
+
+            <div class="stat-label">
+                🎤 Interviews
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ selected }}
+            </div>
+
+            <div class="stat-label">
+                🎉 Selected
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ rejected }}
+            </div>
+
+            <div class="stat-label">
+                ❌ Rejected
+            </div>
+
+        </div>
+
+
+        <div class="stat-card">
+
+            <div class="stat-number">
+                {{ selection_rate }}%
+            </div>
+
+            <div class="stat-label">
+                📈 Selection Rate
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>⚡ Quick Actions</h2>
+
+        <p>
+            Start managing your job applications using the options below.
+        </p>
+
+
+        <a href="/applications">
+
+            <button type="button">
+                📋 Manage Applications
+            </button>
+
+        </a>
+
+
+        <a href="/statistics">
+
+            <button type="button">
+                📊 View Statistics
+            </button>
+
+        </a>
+
+
+        <a href="/eligibility">
+
+            <button type="button">
+                🎓 Check Eligibility
+            </button>
+
+        </a>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>📅 Recent Applications</h2>
+
+        <p class="subtitle">
+            Your latest 5 job applications.
+        </p>
+
+
+        {% if recent_applications %}
+
+            {% for application in recent_applications %}
+
+                <div class="application">
+
+                    <h3>
+                        🏢 {{ application["company"] }}
+                    </h3>
+
+
+                    <p>
+                        <strong>Job Role:</strong>
+                        {{ application["role"] }}
+                    </p>
+
+
+                    <p>
+                        <strong>Application Date:</strong>
+                        {{ application.get("date", "Not available") }}
+                    </p>
+
+
+                    <p>
+
+                        <strong>Status:</strong>
+
+                        {% if application["status"] == "Applied" %}
+
+                            <span class="status-badge status-applied">
+                                📝 Applied
+                            </span>
+
+                        {% elif application["status"] == "Interview" %}
+
+                            <span class="status-badge status-interview">
+                                🎤 Interview
+                            </span>
+
+                        {% elif application["status"] == "Selected" %}
+
+                            <span class="status-badge status-selected">
+                                🎉 Selected
+                            </span>
+
+                        {% elif application["status"] == "Rejected" %}
+
+                            <span class="status-badge status-rejected">
+                                ❌ Rejected
+                            </span>
+
+                        {% else %}
+
+                            <span class="status-badge">
+                                {{ application["status"] }}
+                            </span>
+
+                        {% endif %}
+
+                    </p>
+
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+
+            <p>
+                📭 No applications added yet.
+            </p>
+
+        {% endif %}
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>✨ Features</h2>
+
+        <p>
+            📋 Add and manage job applications
+        </p>
+
+        <p>
+            🔍 Search applications by company
+        </p>
+
+        <p>
+            🔽 Filter applications by status
+        </p>
+
+        <p>
+            ✏️ Edit application details
+        </p>
+
+        <p>
+            🔄 Update application status
+        </p>
+
+        <p>
+            🗑️ Delete applications
+        </p>
+
+        <p>
+            📅 Track application dates
+        </p>
+
+        <p>
+            📊 View application statistics
+        </p>
+
+        <p>
+            🎓 Check company eligibility based on CGPA
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>🎯 Why Use This Tracker?</h2>
+
+        <p>
+            Keeping track of multiple job applications can become difficult.
+            This application helps you organize your applications,
+            monitor their progress and understand your job search performance.
+        </p>
+
+        <p>
+            It is especially useful for students and fresh graduates
+            applying to multiple companies.
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
